@@ -1,0 +1,11 @@
+	
+		 	/*
+		 	 * int i = 0;
+		 	 * while(i < size) {
+		 		// offset is range, here we define offset 1
+		 		int index = textLine.offsetByCodePoints(0,1);
+		 		var codePoint = textLine.substring(i, index);
+		 		i = index;		 		
+		 	}
+		 	 */
+		 	
