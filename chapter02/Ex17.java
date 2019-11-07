@@ -1,7 +1,5 @@
 package chapter02;
 
-import java.util.ArrayList;
-
 public class Ex17 {
 
 	public static class MyQueue{
