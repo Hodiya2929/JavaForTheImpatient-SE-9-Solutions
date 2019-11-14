@@ -14,8 +14,8 @@ public class Ex16RandomSequence  {
 
 	}
 
-	static class RandomSequence implements Ex04IntSeuence{
-
+	private static class RandomSequence implements Ex04IntSeuence{
+		//must make low and high instance variables
 		int low;
 		int high;
 
@@ -40,12 +40,9 @@ public class Ex16RandomSequence  {
 	public static void main(String args[]) {
 
 		var intSeq = randomInts(10, 1000);
-		
+
 		for (int i = 0; i < 1000; i++) 
 			System.out.printf("%d ",intSeq.next());
-
-
-
 	}
 
 }
