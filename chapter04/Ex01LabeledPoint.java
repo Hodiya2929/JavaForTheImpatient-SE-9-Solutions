@@ -1,5 +1,7 @@
 package chapter04;
 
+import java.util.Objects;
+
 public class Ex01LabeledPoint extends Ex01Point {
 
 	private String label;
@@ -15,14 +17,21 @@ public class Ex01LabeledPoint extends Ex01Point {
 	
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		
+		return super.hashCode()+Objects.hash(this.label);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		
+		//don't use instance of in inheritance because it not symmetric. obj.getClass() is the right way
+		if(!super.equals(obj))
+			return false;
+		//the compared objects are of the same class and have the same inheritance fields values
+		
+		var otherP = (Ex01LabeledPoint) obj;
+		
+		return Objects.equals(this.label, otherP.label);		
 	}
 
 	@Override
@@ -35,11 +44,14 @@ public class Ex01LabeledPoint extends Ex01Point {
 	public static void main(String[] args) {
 
 		var labeledP = new Ex01LabeledPoint("First Axes", 0.0, 0.0);
-		System.out.println(labeledP);
+		var labeledP2 = new Ex01LabeledPoint("First Axes", 0.0000, 0.0000);
+		System.out.println("P1: "+labeledP);
+		System.out.println("P2: "+labeledP2);
+		System.out.println("Are equals: "+ labeledP.equals(labeledP2));
+		System.out.println("Hash P1 "+labeledP.hashCode()+ " Hash P2: "+labeledP2.hashCode());
 		
-		System.out.println(labeledP.getnumOfPoints());
-		
-
+		System.out.println("Number points objects: "+labeledP.getnumOfPoints());
+	
 	}
 
 }
