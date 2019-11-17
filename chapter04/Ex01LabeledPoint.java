@@ -36,8 +36,8 @@ public class Ex01LabeledPoint extends Ex01Point {
 
 	@Override
 	public String toString() {
-	
-		var str = String.format("Point: %s x(%f) y(%f)", this.label, this.getX(), this.getY());
+	//toString method can make use of the protected variables x and y. 
+		var str = String.format("Point: %s x(%f) y(%f)", this.label, this.x, this.y);
 		return str;
 	}
 
