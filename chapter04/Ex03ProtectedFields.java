@@ -1,14 +1,14 @@
 package chapter04;
 
-public class Ex01Point {
+public class Ex03ProtectedFields {
 	
 	private static int counter = 0;
 
-	private double x;
-	private double y;
+	protected double x;
+	protected double y;
 	
 	
-	public Ex01Point(double x, double y) {
+	public Ex03ProtectedFields(double x, double y) {
 		counter++;
 		this.x= x;
 		this.y = y;
@@ -16,7 +16,6 @@ public class Ex01Point {
 	// Signing a method as 'final' - the inheritance class cannot override and it's the very opposite from abstract
 	public final double getX() { return x;}
 	public final double getY() { return y;}
-	
 
 	@Override
 	public int hashCode() {
@@ -35,7 +34,7 @@ public class Ex01Point {
 		if(obj == null || obj.getClass()!=this.getClass())
 			return false;
 		
-		var otherP = (Ex01Point) obj; 
+		var otherP = (Ex03ProtectedFields) obj; 
 		//have equals values fields, with objects consider using the null-safe - objects.equals(arg1, arg2)
 		return (Double.compare(this.x, otherP.x)==0 && Double.compare(this.y, otherP.y)==0);
 

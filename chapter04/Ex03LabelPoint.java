@@ -2,11 +2,11 @@ package chapter04;
 
 import java.util.Objects;
 
-public class Ex01LabeledPoint extends Ex01Point {
+public class Ex03LabelPoint extends Ex03ProtectedFields {
 
 	private String label;
 
-	public Ex01LabeledPoint(String label, double x, double y) {
+	public Ex03LabelPoint(String label, double x, double y) {
 
 		super(x, y);
 		this.label = label;
@@ -29,7 +29,7 @@ public class Ex01LabeledPoint extends Ex01Point {
 			return false;
 		//the compared objects are of the same class and have the same inheritance fields values
 		
-		var otherP = (Ex01LabeledPoint) obj;
+		var otherP = (Ex03LabelPoint) obj;
 		
 		return Objects.equals(this.label, otherP.label);		
 	}
@@ -37,14 +37,14 @@ public class Ex01LabeledPoint extends Ex01Point {
 	@Override
 	public String toString() {
 	//toString method can make use of the protected variables x and y. 
-		var str = String.format("Point: %s x(%f) y(%f)", this.label, this.getX(), this.getY());
+		var str = String.format("Point: %s x(%f) y(%f)", this.label, this.x, this.y);
 		return str;
 	}
 
 	public static void main(String[] args) {
 
-		var labeledP = new Ex01LabeledPoint("First Axes", 0.0, 0.0);
-		var labeledP2 = new Ex01LabeledPoint("First Axes", 0.0000, 0.0000);
+		var labeledP = new Ex03LabelPoint("First Axes", 0.0, 0.0);
+		var labeledP2 = new Ex03LabelPoint("First Axes", 0.0000, 0.0000);
 		System.out.println("P1: "+labeledP);
 		System.out.println("P2: "+labeledP2);
 		System.out.println("Are equals: "+ labeledP.equals(labeledP2));
