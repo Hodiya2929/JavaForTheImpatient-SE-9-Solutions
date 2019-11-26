@@ -3,6 +3,7 @@ package chapter05;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ex01ReadDoubles {
@@ -27,8 +28,13 @@ public class Ex01ReadDoubles {
 		//In case the values are not of double type - the resources are closed. Finally block always executed 
 		try {
 			while(fileScanner.hasNext()) 
-				doubleList.add( Double.parseDouble( fileScanner.next() ) );
-		}finally {
+				doubleList.add( fileScanner.nextDouble());
+		}
+		catch(InputMismatchException ex) {
+			System.err.println("Value read from the file is not a floating-point value");
+			ex.printStackTrace();
+		}
+		finally {
 			fileScanner.close();
 		}
 
