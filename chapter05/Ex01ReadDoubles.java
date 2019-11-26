@@ -14,7 +14,6 @@ public class Ex01ReadDoubles {
 
 		for (Double d : doubleArray) 
 			System.out.println(d);
-
 	}
 
 	public static ArrayList<Double> readValues(String filename) throws FileNotFoundException {
@@ -29,10 +28,12 @@ public class Ex01ReadDoubles {
 		try {
 			while(fileScanner.hasNext()) 
 				doubleList.add( fileScanner.nextDouble());
-		}
+			
+		}//Keep throwing the exception because of question requirements
 		catch(InputMismatchException ex) {
-			System.err.println("Value read from the file is not a floating-point value");
-			ex.printStackTrace();
+			throw ex;
+			//System.err.println("Value read from the file is not a floating-point value");
+			//ex.printStackTrace();
 		}
 		finally {
 			fileScanner.close();

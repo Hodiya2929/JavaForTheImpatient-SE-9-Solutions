@@ -1,6 +1,7 @@
 package chapter05;
 
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 
 public class Ex02SumOfValues {
 
@@ -11,13 +12,18 @@ public class Ex02SumOfValues {
 
 	}
 
-	public double sumOfValues(String fileName) throws FileNotFoundException {
+
+	public double sumOfValues(String fileName) throws FileNotFoundException  {
 
 		double sum = 0;
 
-		for (Double d :Ex01ReadDoubles.readValues(fileName)) 
-			sum += d;
-
+		try {
+			for (Double d :Ex01ReadDoubles.readValues(fileName)) 
+				sum += d;
+			//Keep throwing the exception because of question requirements
+		}catch(InputMismatchException ex) {
+			throw ex;
+		}
 		return sum;
 	}
 }
