@@ -76,7 +76,5 @@ public class Ex08TheClassClass {
 	System.out.println("toString() returns: "+ obj.toString());
 	System.out.println("toGenericString() returns: "+ obj.toGenericString());
 	
-	
-	
 	}
 }
