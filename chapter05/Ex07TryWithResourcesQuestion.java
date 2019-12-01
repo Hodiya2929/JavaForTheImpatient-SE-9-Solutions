@@ -35,7 +35,7 @@ public class Ex07TryWithResourcesQuestion {
 
 		var in = new Scanner(Paths.get("some/path/..."));
 		var out = new PrintWriter("some fileName");
-////
+
 		try(in;out)
 
 		{
