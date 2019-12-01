@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Ex05ResourcesWithoutTryWithResources {
