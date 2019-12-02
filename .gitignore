@@ -2,4 +2,4 @@
 
 # start figuring out how to untrack chapter05/Excercise07
 
-#git update-index --skip-worktree  chapter05/Ex07TryWithResourcesQuestion.java
+# git update-index --skip-worktree  chapter05/Ex07TryWithResourcesQuestion.java
