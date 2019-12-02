@@ -15,6 +15,7 @@ public class Ex07TryWithResourcesQuestion {
 	 * aren't handled. In addition, if an exception occurs in the printWriter constructor - 
 	 * the scanner is never closed, therefore the second example is a better solution because
 	 * it handles exceptions in the constructors as well in the reverse order that they were built
+	 *
 	 */
 
 	public static void firstExample(){
