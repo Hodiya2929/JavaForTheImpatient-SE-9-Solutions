@@ -17,8 +17,8 @@ public class  Ex01GenericStack<E> {
 	}
 	
 	public E pop () {
-		
-		return stack.remove( stack.size()-1 );		//better is to java an 'int' size field.
+		//case size is 0 is handled by the ArrayList class programmers.
+		return stack.remove( stack.size()-1 );		
 	}
 	
 	public boolean isEmpty() {
