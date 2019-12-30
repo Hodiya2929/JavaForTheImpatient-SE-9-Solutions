@@ -2,7 +2,7 @@ package chapter06;
 
 import java.util.ArrayList;
 
-public class Ex06PECS {
+public class Ex06PECS { //PECS = Producer Extends, Consumer Supply
 
 	static class A {
 
@@ -38,7 +38,32 @@ public class Ex06PECS {
 	
 	public static void main(String[] args) {
 		
-		//PECS = Producer Extends, Consumer Supply
+		var AList = new ArrayList<A>();
+		var BList = new ArrayList<B>();
+		
+		AList.add(new A());
+		AList.add(new B());//ok because B is A + some properties.
+		
+     // BList.add(new A()); not allowed 
+		BList.add(new B());
+		BList.add(new B());
+		
+		
+		var emptyA = new ArrayList<A>();
+		var emptyB = new ArrayList<B>();
+		
+		/* that is exactly the point to let copy from a reference
+		 * of some type that extends T to an array of type T 
+		 */
+		append(BList,emptyA); 
+		// append(AList, emptyB); A doesn't extends B - compiling error
+		
+		//Now examine appent2 function:
+			
+		append(BList,emptyA); 
+		// append(AList, emptyB); A doesn't extends B - compiling error
+		
+		//Behave in the same way just like 'append'.
 
 	}
 
